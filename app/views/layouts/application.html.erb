@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>REAL tiny projects</title>
+	<!-- Font Montserrat -->
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese" rel="stylesheet" type="text/css">
+
+	<!-- Files Style -->
+	<%= stylesheet_link_tag :application %>
+  <%= javascript_include_tag :application %>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+    <script type="text/javascript" charset="utf-8">
+/**
+ * @author Alexander Farkas
+ * v. 1.21
+ */
+
+(function($) {
+    if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
+        var oldCurCSS = jQuery.curCSS;
+        jQuery.curCSS = function(elem, name, force){
+            if(name === 'background-position'){
+                name = 'backgroundPosition';
+            }
+            if(name !== 'backgroundPosition' || !elem.currentStyle || elem.currentStyle[ name ]){
+                return oldCurCSS.apply(this, arguments);
+            }
+            var style = elem.style;
+            if ( !force && style && style[ name ] ){
+                return style[ name ];
+            }
+            return oldCurCSS(elem, 'backgroundPositionX', force) +' '+ oldCurCSS(elem, 'backgroundPositionY', force);
+        };
+    }
+
+    var oldAnim = $.fn.animate;
+    $.fn.animate = function(prop){
+        if('background-position' in prop){
+            prop.backgroundPosition = prop['background-position'];
+            delete prop['background-position'];
+        }
+        if('backgroundPosition' in prop){
+            prop.backgroundPosition = '('+ prop.backgroundPosition;
+        }
+        return oldAnim.apply(this, arguments);
+    };
+
+    function toArray(strg){
+        strg = strg.replace(/left|top/g,'0px');
+        strg = strg.replace(/right|bottom/g,'100%');
+        strg = strg.replace(/([0-9\.]+)(\s|\)|$)/g,"$1px$2");
+        var res = strg.match(/(-?[0-9\.]+)(px|\%|em|pt)\s(-?[0-9\.]+)(px|\%|em|pt)/);
+        return [parseFloat(res[1],10),res[2],parseFloat(res[3],10),res[4]];
+    }
+
+    $.fx.step. backgroundPosition = function(fx) {
+        if (!fx.bgPosReady) {
+            var start = $.curCSS(fx.elem,'backgroundPosition');
+
+            if(!start){//FF2 no inline-style fallback
+                start = '0px 0px';
+            }
+
+            start = toArray(start);
+
+            fx.start = [start[0],start[2]];
+
+            var end = toArray(fx.options.curAnim.backgroundPosition);
+            fx.end = [end[0],end[2]];
+
+            fx.unit = [end[1],end[3]];
+            fx.bgPosReady = true;
+        }
+        //return;
+        var nowPosX = [];
+        nowPosX[0] = ((fx.end[0] - fx.start[0]) * fx.pos) + fx.start[0] + fx.unit[0];
+        nowPosX[1] = ((fx.end[1] - fx.start[1]) * fx.pos) + fx.start[1] + fx.unit[1];           
+        fx.elem.style.backgroundPosition = nowPosX[0]+' '+nowPosX[1];
+
+    };
+})(jQuery);
+    </script>
+		<script src="/assets/html5shiv.js"></script>
+		<script src="/assets/respond.min.js"></script>
+	<![endif]-->
+	<!-- Favicons --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+	<link rel="shortcut icon" href="/assets/favicon-16x16.png" type="image/x-icon" />
+	<!-- For third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+	<!-- For iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+	<!-- For first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+</head>
+
+
+<body id="wpdesk-body-page">
+
+	<!-- Static navbar -->
+  <%= render :partial=>'layouts/header' %>
+	<!-- Carousel -->
+  <%= yield %>
+
+
+	<!-- Footer Page -->
+	<footer id="wpdesk-footer-page" class="">
+		<div class="container">
+			<span class="copyright">© Copyright 2013. REAL tiny projects all rights reserved.</span>
+		</div><!-- /.container -->
+	</footer><!-- /#wpdesk-footer-page -->
+	
+	<!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>
