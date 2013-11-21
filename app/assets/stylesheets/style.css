@@ -70,21 +70,21 @@ transition: all 300ms linear;}
 #section-skills{background:rgba(230,230,230,.9)}
 #section-skills .title-progress{margin-bottom:10px;display:inline-block}
 #section-skills h4{margin-bottom:20px!important}
-#section-testimonial{background:rgba(46,162,142,.9);color:#fff}
-#section-testimonial .head-section h1:after,#section-testimonial .head-section h2:after{background:#fff}
-#section-testimonial #testimonial{background:url("./assets/quote-testimonial.png") no-repeat top center;padding-top:0px}
-#section-testimonial h3{
+#section-faqs{background:rgba(46,162,142,.9);color:#fff}
+#section-faqs .head-section h1:after,#section-faqs .head-section h2:after{background:#fff}
+#section-faqs #faqs{background:url("/assets/quote-faqs.png") no-repeat top center;padding-top:0px}
+#section-faqs h3{
   margin-top: 0px;
 }
-#section-testimonial #testimonial>ul.list-testimonial{text-align:center;padding:0}
-#section-testimonial #testimonial>ul.list-testimonial li{list-style:none}
-#section-testimonial #testimonial>ul.list-testimonial li p.testimonial-quote{font-size:16px;margin-bottom:20px}
-#section-testimonial #testimonial>ul.list-testimonial li span.testimonial-source{text-transform:uppercase}
-#section-testimonial #testimonial>ul.list-testimonial li span.testimonial-source a{color:#fff}
-#section-testimonial #testimonial>ul.list-testimonial li span.testimonial-source a:hover{text-decoration:none;color:#be7234}
-#section-testimonial #testimonial ul.testimonial-bullets{text-align:center;margin:25px 0 0 0;display:block;padding:0}
-#section-testimonial #testimonial ul.testimonial-bullets span.cycle-pager-active{background:#ccdde9}
-#section-testimonial #testimonial ul.testimonial-bullets span{background:#98bbd3;height:12px;width:12px;border-radius:50%;display:inline-block;color:rgba(255,0,0,0);line-height:.6;margin-right:20px;cursor:pointer;margin-top:1px;-webkit-transition:all .3s ease-out;transition:all .3s ease-out}
+#section-faqs #faqs>ul.list-faqs{text-align:center;padding:0}
+#section-faqs #faqs>ul.list-faqs li{list-style:none}
+#section-faqs #faqs>ul.list-faqs li p.faqs-quote{font-size:16px;margin-bottom:20px}
+#section-faqs #faqs>ul.list-faqs li span.faqs-source{text-transform:uppercase}
+#section-faqs #faqs>ul.list-faqs li span.faqs-source a{color:#fff}
+#section-faqs #faqs>ul.list-faqs li span.faqs-source a:hover{text-decoration:none;color:#be7234}
+#section-faqs #faqs ul.faqs-bullets{text-align:center;margin:25px 0 0 0;display:block;padding:0}
+#section-faqs #faqs ul.faqs-bullets span.cycle-pager-active{background:#ccdde9}
+#section-faqs #faqs ul.faqs-bullets span{background:#98bbd3;height:12px;width:12px;border-radius:50%;display:inline-block;color:rgba(255,0,0,0);line-height:.6;margin-right:20px;cursor:pointer;margin-top:1px;-webkit-transition:all .3s ease-out;transition:all .3s ease-out}
 #section-clients{background:rgba(225,108,91,.9);color:#fff}
 #section-clients .head-section h1:after,#section-clients .head-section h2:after{background:#fff}
 #section-clients ul.list-clients{margin:0;padding:0;display:inline-block;width:100%}
@@ -143,13 +143,6 @@ transition: all 300ms linear;}
   color: #ffffff;
 }
 
-#section-faqs{
-  background-color: rgba(39,65,93,.6);
-  color: #ffffff;
-}
-#section-faqs .panel-body{
-  color: #333;
-}
 .common-page{
   background-color: #fff;
   padding-bottom: 30px;
