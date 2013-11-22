@@ -186,9 +186,10 @@ box-shadow: 0px 0px 3px #aaa;
 }
 
 #section-home{
-  background: url(/assets/2.jpg) fixed center no-repeat;
+
 }
 #section-home .head-section{
+  color: #fff;
   background-color:    rgba(0, 0, 0, .6);
   padding: 30px;
   height: 300px;

@@ -7,6 +7,12 @@ $(document).ready(function() {
 	'use strict';
 	$('#section-home').css('height', $(window).height());
   $('#section-home .head-section').css('margin-top', ($(window).height() / 2) - ($('.head-section').height() / 2));
+  $("#section-home").videoBG({
+  	mp4:'/assets/claire-loop-1920x1080.mp4',
+  	poster:'/assets/2.jpg',
+  	scale:true,
+  	zIndex:0
+  });
 	$(window).resize(function () {
 		$('#section-home').css('height', $(window).height());
 	});
