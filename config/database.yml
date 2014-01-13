@@ -1,6 +1,0 @@
-production:
-  adapter: postgis
-  database: com_development
-  username: postgres
-  password: shaanxi177
-  host: 54.252.165.180
