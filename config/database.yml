@@ -4,3 +4,9 @@ production:
   username: postgres
   password: shaanxi177
   host: 54.252.165.180
+development:
+  adapter: postgis
+  database: tiny_development
+  username: zz
+  password: 
+  host: localhost
