@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>REAL tiny projects</title>
+	<!-- Font Montserrat -->
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese" rel="stylesheet" type="text/css">
+
+	<!-- Files Style -->
+	<link href="assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="assets/application.js" type="text/javascript"></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+    <script type="text/javascript" charset="utf-8">
+/**
+ * @author Alexander Farkas
+ * v. 1.21
+ */
+
+(function($) {
+    if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
+        var oldCurCSS = jQuery.curCSS;
+        jQuery.curCSS = function(elem, name, force){
+            if(name === 'background-position'){
+                name = 'backgroundPosition';
+            }
+            if(name !== 'backgroundPosition' || !elem.currentStyle || elem.currentStyle[ name ]){
+                return oldCurCSS.apply(this, arguments);
+            }
+            var style = elem.style;
+            if ( !force && style && style[ name ] ){
+                return style[ name ];
+            }
+            return oldCurCSS(elem, 'backgroundPositionX', force) +' '+ oldCurCSS(elem, 'backgroundPositionY', force);
+        };
+    }
+
+    var oldAnim = $.fn.animate;
+    $.fn.animate = function(prop){
+        if('background-position' in prop){
+            prop.backgroundPosition = prop['background-position'];
+            delete prop['background-position'];
+        }
+        if('backgroundPosition' in prop){
+            prop.backgroundPosition = '('+ prop.backgroundPosition;
+        }
+        return oldAnim.apply(this, arguments);
+    };
+
+    function toArray(strg){
+        strg = strg.replace(/left|top/g,'0px');
+        strg = strg.replace(/right|bottom/g,'100%');
+        strg = strg.replace(/([0-9\.]+)(\s|\)|$)/g,"$1px$2");
+        var res = strg.match(/(-?[0-9\.]+)(px|\%|em|pt)\s(-?[0-9\.]+)(px|\%|em|pt)/);
+        return [parseFloat(res[1],10),res[2],parseFloat(res[3],10),res[4]];
+    }
+
+    $.fx.step. backgroundPosition = function(fx) {
+        if (!fx.bgPosReady) {
+            var start = $.curCSS(fx.elem,'backgroundPosition');
+
+            if(!start){//FF2 no inline-style fallback
+                start = '0px 0px';
+            }
+
+            start = toArray(start);
+
+            fx.start = [start[0],start[2]];
+
+            var end = toArray(fx.options.curAnim.backgroundPosition);
+            fx.end = [end[0],end[2]];
+
+            fx.unit = [end[1],end[3]];
+            fx.bgPosReady = true;
+        }
+        //return;
+        var nowPosX = [];
+        nowPosX[0] = ((fx.end[0] - fx.start[0]) * fx.pos) + fx.start[0] + fx.unit[0];
+        nowPosX[1] = ((fx.end[1] - fx.start[1]) * fx.pos) + fx.start[1] + fx.unit[1];           
+        fx.elem.style.backgroundPosition = nowPosX[0]+' '+nowPosX[1];
+
+    };
+})(jQuery);
+    </script>
+		<script src="assets/html5shiv.js"></script>
+		<script src="assets/respond.min.js"></script>
+	<![endif]-->
+	<!-- Favicons --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+	<link rel="shortcut icon" href="assets/favicon-16x16.png" type="image/x-icon" />
+	<!-- For third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+	<!-- For iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+	<!-- For first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+</head>
+
+
+<body id="wpdesk-body-page">
+
+	<!-- Static navbar -->
+  <header id="navigation" class="navbar navbar-default">
+	<div class="container">
+
+		 <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+			
+			<a id="wpdesk-navbar-brand" class="navbar-brand retina" href="/">
+        REAL tiny projects
+			</a>
+		</div><!-- /#wpdesk-navbar-header -->
+	
+		<div class="collapse navbar-collapse" id="navbar">
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="/#section-home">HOME</a></li>
+				<li><a href="/#section-works">PROJECTS</a></li>
+				<li><a href="/#section-services">SERVICES</a></li>
+				<li><a href="/#section-team">TEAM</a></li>
+        <li><a href="/#section-blog">COMMUNITY</a></li>
+				<li><a href="/#section-contact">CONTACT US</a></li>
+			</ul>
+
+		</div><!--/.nav-collapse -->
+
+	</div><!-- /.container -->
+</header>
+
+<script type="text/javascript" charset="utf-8">
+$('.navbar-nav').onePageNav({
+	currentClass: 'active',
+	changeHash: false,
+	scrollSpeed: 750,
+	scrollOffset: 94,
+	scrollThreshold: 0.1,
+	easing: 'swing',
+  filter: ':not(.external)'
+});
+</script>
+	<!-- Carousel -->
+  
+  <div id="section-home" >
+    
+    <div id="main-slider">
+      <ul class="slides">
+        <li >
+          <div class="slide-content">
+            <div class="container">
+              
+
+              <h1>EMPOWERING PEOPLE IN REAL ESTATE
+        </h1>
+              <p>- REAL tiny projects </p>
+              <p>Founded in Melbourne 2013</p>
+              <br />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+	</div> 
+
+	<!-- Section Tagline -->
+  <!-- <section id="section-tagline" class="section-page">
+    <div class="container">
+      <h2>A Beautiful and Elegant Template One Page For Studios And Freelancers.</h2>
+      <p>We are awesome team. We offer creative solutions for every web-based project you can think of. We take pride in our work and everything we create is executed with precision and love.</p>
+    </div>
+  </section> -->
+
+
+	<!-- Section Works -->
+	<section id="section-works" class="section-page">
+		<div class="container">
+
+		<div class="head-section">
+			<h2>Our Projects</h2>
+			<p>We may be a small team but we are power-packed with a diverse set of skills and experiences. Our focus is to innovate and integrate the real estate industry with technology, individuals and the wider community. Apart from our projects, we are dedicated to building partnerships with industry groups and lend our technical team to all the good people out there, for a small fee of course.</p>
+		</div>
+		
+		<br>
+
+		<div class="row">
+
+
+			<div id="project_2" class="box-project col-xs-12 col-sm-6 col-md-4">
+				<a class="prettyPhoto" href="assets//works/work_placeholder.png">
+					<div class="content"><h5>UrbanNest</h5></div>
+					
+				</a>
+        <h2>UrbanNest</h2>
+        <p class="desc">UrbanNest aims to help buyers and investors identify the most suitable new housing developments in Melbourne. We compile information directly from the developer on all aspects of each development to make sure buyers have access to all the information possible to make a well- informed purchase.
+</p>
+			</div><!-- /#project_2 -->
+
+			<div id="project_3" class="box-project col-xs-12 col-sm-6 col-md-4">
+				<a class="prettyPhoto" href="assets//works/work_placeholder.png">
+					<div class="content"><h5>UrbanCrib</h5></div>
+					
+				</a>
+        <h2>UrbanCrib</h2>
+        <p class="desc">UrbanCrib is our co-working space project based in Melbourne. The idea is to nurture and create a network of well-equipped and fairly priced co-working spaces in locations suitable for startups and small businesses to make their journey from early-stage startup to making an impact on the community easier.</p>
+			</div><!-- /#project_3 -->
+			
+			<div id="project_4" class="box-project col-xs-12 col-sm-6 col-md-4">
+				<a class="prettyPhoto" href="assets//works/work_placeholder.png">
+					<div class="content"><h5>UrbanCrowd</h5></div>
+					
+				</a>
+        <h2>UrbanCrowd</h2>
+        <p class="desc">UrbanCrowd is still in alpah right now. It is a platform for crowd-sourcing quality real estate investments in Melbourne. It aims to allow small private investors to access quality investments otherwise reserved only for the larger institutional investors.</p>
+			</div><!-- /#project_4 -->
+
+		</div><!-- .row -->
+		</div><!-- /.container -->
+	</section><!-- /#section-works -->
+	<!-- Section Services -->
+	<section id="section-services" class="section-page">
+		<div class="container">
+
+			<div class="head-section">
+          		<h1>What We’re About</h1>
+          		<p>We may be a small team but we are power-packed with a diverse set of skills and experiences. Our focus is to innovate and integrate the real estate industry with technology, individuals and the wider community. Apart from our projects, we are dedicated to building partnerships with industry groups and lend our technical team to all the good people out there, for a small fee of course.</p>
+			</div><!-- /.head-section -->
+			
+			<br>
+			<br>
+			<div class="row">
+				<article id="service_1" class="box-service col-md-4">
+					<img alt="" title="Beautifully Simplistic" src="assets//service_1.png" data-at2x="assets//service_1@2.png">
+					<h4>Anything Tech</h4>
+					<p>We have a fantastic web developer guru on hand to breathe all our ideas into HTML life.
+
+					</p>
+				</article><!-- /#service_1 -->
+
+				<article class="box-service col-md-4">
+					<img alt="" title="Development Websites" class="retina" src="assets//service_2.png" data-at2x="assets//service_2@2.png">
+					<h4>Anything Real Estate</h4>
+					<p>Our knowledge of the real estate market equips us to look to technology in innovating the real estate industry.
+					</p>
+				</article><!-- /#service_2 -->
+
+				<article class="box-service col-md-4 ">
+					<img alt="" title="Free Management &amp; Support" src="assets//service_3.png" data-at2x="assets//service_3@.png">
+					<h4>Great Ideas</h4>
+					<p>We are always willing to give ideas a go, no matter how and where they come from.
+					</p>
+				</article><!-- /#service_3 -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section><!-- #section-services -->
+
+	<!-- Section Team -->
+	<section id="section-team" class="section-page">
+		<div class="container">
+
+		<div class="head-section">
+			<h2>Team @ REAL tiny projects</h2>
+			<p>Meet the faces behind the name. We’re a bunch of friends who are passionate in creative media, real estate and technology.</p>
+		</div><!-- /.head-section -->
+		<br>
+		<div class="row">
+
+			<div id="person_2" class="col-md-3 person col-xs-12 col-sm-6 col-md-4">
+				<img alt="" title="" class="person-avatar img-circle" src="assets//persons/person_placeholder.png" data-at2x="assets//persons/person_2@2.png">
+				<h4 class="person-name">Zidi</h4>
+				<span class="person-skills"></span>
+				<p class="person-description">Technology Co-Founder</p>
+				
+			</div><!-- /#person_2 -->
+
+			<div id="person_3" class="col-md-3 person col-xs-12 col-sm-6 col-md-4">
+				<img alt="" title="" class="person-avatar img-circle" src="assets//persons/person_placeholder.png" data-at2x="assets//persons/person_3@2.png">
+				<h4 class="person-name">Christie</h4>
+				<span class="person-skills"></span>
+				<p class="person-description">Creative Media Co-Founder</p>
+
+			</div><!-- /#person_3 -->
+
+			<div id="person_4" class="col-md-3 person col-xs-12 col-sm-6 col-md-4">
+				<img alt="" title="" class="person-avatar img-circle" src="assets//persons/person_placeholder.png" data-at2x="assets//persons/person_4@2.png">
+				<h4 class="person-name">Mish</h4>
+				<span class="person-skills"></span>
+				<p class="person-description">Real Estate Co-Founder</p>
+
+			</div><!-- /#person_4 -->
+
+		</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section><!-- /#section-team -->
+	<section id="section-blog" class="section-page">
+		<div class="container">
+			<div class="head-section">
+				<h2>COMMUNITY</h2>
+			</div>
+      
+		
+      
+		</div><!-- /.container -->
+	</section><!-- /#section-faqs -->
+
+	<!-- Section Contact -->
+	<section id="section-contact" class="section-page">
+		<div class="container">
+			<div class="head-section">
+				<h2>Contact Us</h2>
+				<p></p>
+			</div><!-- /.head-section -->
+		
+			<div id="links-contact">
+				<a class="twitter" href="http://twitter.com/REALtinyprojects" title="@REALtinyprojects"></a>
+				<a class="facebook" href="#" title=""></a>
+				<a class="google-plus" href="#" title=""></a>
+				<a class="instagram" href="#" title=""></a>
+			</div><!-- /#links-contact -->
+		</div><!-- /.container -->
+	</section><!-- /#section-contact -->
+
+
+
+	<!-- Footer Page -->
+	<footer id="wpdesk-footer-page" class="">
+		<div class="container">
+			<span class="copyright">© Copyright 2013. REAL tiny projects all rights reserved.</span>
+		</div><!-- /.container -->
+	</footer><!-- /#wpdesk-footer-page -->
+	
+	<!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>
