@@ -9566,7 +9566,7 @@ margin-top: 0
 margin-bottom: 0
 }
 #section-services {
-background: rgba(255,255,255,0.5);
+background: rgba(255,255,255,0.8);
 color: #333
 }
 #section-services .head-section h2:after,#section-services .head-section h1:after {
@@ -9586,7 +9586,7 @@ margin-bottom: 45px
 
 }
 #section-works {
-background: rgba(76,95,112,0.5);
+background: rgba(76,95,112,0.8);
 color: #ffffff
 }
 #section-works .box-project {
@@ -9620,7 +9620,7 @@ margin: 26% 5% 0;
 box-sizing: border-box
 }
 #section-team {
-background: rgba(76,95,112,0.5);
+background: rgba(76,95,112,0.8);
 color: #fff
 }
 #section-team .head-section h1:after,#section-team .head-section h2:after {
@@ -9690,7 +9690,7 @@ width: 200px;
 height: 200px
 }
 #section-skills {
-background: rgba(230,230,230,0.5)
+background: rgba(230,230,230,0.8)
 }
 #section-skills .title-progress {
 margin-bottom: 10px;
@@ -9700,7 +9700,7 @@ display: inline-block
 margin-bottom: 20px !important
 }
 #section-faqs {
-background: rgba(46,162,142,0.5);
+background: rgba(46,162,142,0.8);
 color: #fff
 }
 #section-faqs .head-section h1:after,#section-faqs .head-section h2:after {
@@ -9758,7 +9758,7 @@ margin-top: 1px;
 transition: all .3s ease-out
 }
 #section-clients {
-background: rgba(225,108,91,0.5);
+background: rgba(225,108,91,0.8);
 color: #fff
 }
 #section-clients .head-section h1:after,#section-clients .head-section h2:after {
@@ -9787,7 +9787,7 @@ transition: opacity .5s ease-out
 opacity: .5
 }
 #section-contact {
-background: rgba(76,95,112,0.5);
+background: rgba(100,100,100,0.8);
 color: #fff
 }
 #section-contact .head-section h1:after,#section-contact .head-section h2:after {
@@ -9889,23 +9889,23 @@ padding: 23px 0;
 text-align: center
 }
 #section-how {
-background-color: rgba(46,162,142,0.5);
+background-color: rgba(46,162,142,0.8);
 color: #ffffff
 }
 #section-why {
-background-color: rgba(84,141,181,0.5);
+background-color: rgba(84,141,181,0.8);
 color: #ffffff
 }
 #section-where {
-background-color: rgba(230,230,230,0.5);
+background-color: rgba(230,230,230,0.8);
 color: #333333
 }
 #section-who {
-background-color: rgba(225,108,91,0.5);
+background-color: rgba(225,108,91,0.8);
 color: #ffffff
 }
 #section-projects {
-background-color: rgba(225,108,91,0.5);
+background-color: rgba(225,108,91,0.8);
 color: #ffffff
 }
 #section-projects h5 {
@@ -9915,7 +9915,7 @@ color: #ffffff
 color: #ffffff
 }
 #section-team {
-background-color: rgba(76,95,112,0.5);
+background-color: rgba(76,95,112,0.8);
 color: #ffffff
 }
 .common-page {
@@ -9953,7 +9953,7 @@ font-weight: normal
 background: url(2.jpg) fixed center no-repeat
 }
 #section-home .head-section {
-background-color: rgba(0,0,0,0.5);
+background-color: rgba(0,0,0,0.8);
 padding: 30px;
 height: 300px
 }
@@ -10175,7 +10175,7 @@ text-align: left
 }
 .slide-content {
 padding: 30px 0;
-background: rgba(0,0,0,0.5);
+background: rgba(0,0,0,0.8);
 color: #ffffff
 }
 #main-slider .slides li {
@@ -10185,7 +10185,7 @@ background-size: cover !important;
 background-attachment: fixed !important
 }
 .navbar-collapse.in {
-background: rgba(255,255,255,0.5);
+background: rgba(255,255,255,0.8);
 z-index: 3000;
 opacity: 1
 }
